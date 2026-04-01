@@ -1,0 +1,200 @@
+.item {
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  border: 1.5px solid #f1f5f9;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+  animation: slideIn 0.22s ease both;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.item:hover {
+  border-color: #e2e8f0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+  transform: translateY(-1px);
+}
+
+.itemCompleted {
+  opacity: 0.55;
+}
+
+.itemOverdue {
+  border-color: #fca5a5;
+  background: #fff5f5;
+}
+
+.itemOverdue:hover {
+  border-color: #f87171;
+}
+
+/* ── Row layout ── */
+.itemContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── Circular checkbox ── */
+.checkbox {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 800;
+  color: white;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.checkbox:hover {
+  border-color: #6366f1;
+  transform: scale(1.12);
+}
+
+.checked {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+}
+
+/* ── Text group (text + due date stacked) ── */
+.textGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.itemText {
+  font-size: 15px;
+  color: #1e293b;
+  word-break: break-word;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.completedText {
+  text-decoration: line-through;
+  color: #94a3b8;
+  cursor: default;
+}
+
+.dueDate {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.dueDateOverdue {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* ── Inline edit ── */
+.editInput {
+  font-size: 15px;
+  border: none;
+  border-bottom: 2px solid #6366f1;
+  outline: none;
+  padding: 2px 4px;
+  color: #1e293b;
+  background: transparent;
+  width: 100%;
+}
+
+/* ── Priority badge ── */
+.priorityBadge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: capitalize;
+  flex-shrink: 0;
+  letter-spacing: 0.2px;
+}
+
+.high {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.medium {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.low {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* ── Action buttons (reveal on hover) ── */
+.actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.item:hover .actions {
+  opacity: 1;
+}
+
+.editButton,
+.deleteButton {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.1s;
+  padding: 0;
+  line-height: 1;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  transform: scale(1.1);
+}
+
+.editButton {
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.editButton:hover {
+  background: #e2e8f0;
+}
+
+.deleteButton {
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 20px;
+}
+
+.deleteButton:hover {
+  background: #fecaca;
+}

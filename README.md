@@ -21,6 +21,10 @@ A clean and modern Todo List application built from scratch with **React 19** an
 
 ---
 
+## Screenshot
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/4d432eb7-7f6a-47e8-9ad2-6c45930015a5" />
+
+
 ## ✨ Features
 
 | Feature | Description |
